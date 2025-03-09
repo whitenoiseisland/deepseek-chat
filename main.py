@@ -45,4 +45,5 @@ async def root():
 if __name__ == "__main__":
     # Dynamically get the port Render assigned
     port = int(os.getenv("PORT", 10000))  # PORT is set by Render during deployment
+    print(f"Using port {port}")  # Log the port for debugging
     uvicorn.run(app, host="0.0.0.0", port=port)  # Bind to 0.0.0.0 to accept external traffic
